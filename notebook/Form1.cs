@@ -76,20 +76,34 @@ namespace notebook
             string fileText = System.IO.File.ReadAllText(filename);
             textBox1.Text = fileText;
         }
-
+        /// <summary>
+        /// Кнопка Вид/Масштаб/Увеличить
+        /// Увеличивает масштаб
+        /// </summary>
         private void ZoomIn(object sender, EventArgs e)
         {
             textBox1.Font = new Font(textBox1.Font.Name, textBox1.Font.Size + 4, textBox1.Font.Style);
         }
-
+        /// <summary>
+        /// Кнопка Вид/Масштаб/Уменьшить
+        /// Уменьшает масштаб
+        /// </summary>
         private void ZoomOut(object sender, EventArgs e)
         {
             if (textBox1.Font.Size - 4 <= 0)
             {
                 return;
             } 
-            textBox1.Font = new Font(textBox1.Font.Name, textBox1.Font.Size - 5, textBox1.Font.Style);
+            textBox1.Font = new Font(textBox1.Font.Name, textBox1.Font.Size - 4, textBox1.Font.Style);
 
+        }
+        /// <summary>
+        /// Кнопка Вид/Масштаб/восстановить масштаб по умолчанию
+        /// восстанавливает масштаб по умолчанию
+        /// </summary>
+        private void ZoomDefault(object sender, EventArgs e)
+        {
+            textBox1.Font = new Font(textBox1.Font.Name, 8, textBox1.Font.Style);
         }
     }
 }
