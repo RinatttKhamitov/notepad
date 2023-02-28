@@ -39,6 +39,11 @@
             this.сохранитьКакToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.видToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.масштабToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.увеличитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.уменьшитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.восстановитьМасштабПоУмолчаниюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +69,8 @@
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem});
+            this.файлToolStripMenuItem,
+            this.видToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -87,34 +93,34 @@
             // создатьToolStripMenuItem
             // 
             this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.создатьToolStripMenuItem.Text = "Создать";
             this.создатьToolStripMenuItem.Click += new System.EventHandler(this.ClickCreate);
             // 
             // новоеОкноToolStripMenuItem
             // 
             this.новоеОкноToolStripMenuItem.Name = "новоеОкноToolStripMenuItem";
-            this.новоеОкноToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.новоеОкноToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.новоеОкноToolStripMenuItem.Text = "Новое окно";
             this.новоеОкноToolStripMenuItem.Click += new System.EventHandler(this.ClickNewWindow);
             // 
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.открытьToolStripMenuItem.Text = "Открыть...";
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.ClickOpen);
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             // 
             // сохранитьКакToolStripMenuItem
             // 
             this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
-            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.сохранитьКакToolStripMenuItem.Text = "Сохранить как...";
             // 
             // saveFileDialog1
@@ -124,6 +130,44 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // видToolStripMenuItem
+            // 
+            this.видToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.масштабToolStripMenuItem});
+            this.видToolStripMenuItem.Name = "видToolStripMenuItem";
+            this.видToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.видToolStripMenuItem.Text = "Вид";
+            // 
+            // масштабToolStripMenuItem
+            // 
+            this.масштабToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.увеличитьToolStripMenuItem,
+            this.уменьшитьToolStripMenuItem,
+            this.восстановитьМасштабПоУмолчаниюToolStripMenuItem});
+            this.масштабToolStripMenuItem.Name = "масштабToolStripMenuItem";
+            this.масштабToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.масштабToolStripMenuItem.Text = "Масштаб";
+            // 
+            // увеличитьToolStripMenuItem
+            // 
+            this.увеличитьToolStripMenuItem.Name = "увеличитьToolStripMenuItem";
+            this.увеличитьToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
+            this.увеличитьToolStripMenuItem.Text = "Увеличить";
+            this.увеличитьToolStripMenuItem.Click += new System.EventHandler(this.ZoomIn);
+            // 
+            // уменьшитьToolStripMenuItem
+            // 
+            this.уменьшитьToolStripMenuItem.Name = "уменьшитьToolStripMenuItem";
+            this.уменьшитьToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
+            this.уменьшитьToolStripMenuItem.Text = "Уменьшить";
+            this.уменьшитьToolStripMenuItem.Click += new System.EventHandler(this.ZoomOut);
+            // 
+            // восстановитьМасштабПоУмолчаниюToolStripMenuItem
+            // 
+            this.восстановитьМасштабПоУмолчаниюToolStripMenuItem.Name = "восстановитьМасштабПоУмолчаниюToolStripMenuItem";
+            this.восстановитьМасштабПоУмолчаниюToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
+            this.восстановитьМасштабПоУмолчаниюToolStripMenuItem.Text = "восстановить масштаб по умолчанию";
             // 
             // Form1
             // 
@@ -156,6 +200,11 @@
         private System.Windows.Forms.ToolStripMenuItem сохранитьКакToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem видToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem масштабToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem увеличитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem уменьшитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem восстановитьМасштабПоУмолчаниюToolStripMenuItem;
     }
 }
 
