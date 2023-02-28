@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -74,6 +75,21 @@ namespace notebook
             // читаем файл в строку
             string fileText = System.IO.File.ReadAllText(filename);
             textBox1.Text = fileText;
+        }
+
+        private void ZoomIn(object sender, EventArgs e)
+        {
+            textBox1.Font = new Font(textBox1.Font.Name, textBox1.Font.Size + 4, textBox1.Font.Style);
+        }
+
+        private void ZoomOut(object sender, EventArgs e)
+        {
+            if (textBox1.Font.Size - 4 <= 0)
+            {
+                return;
+            } 
+            textBox1.Font = new Font(textBox1.Font.Name, textBox1.Font.Size - 5, textBox1.Font.Style);
+
         }
     }
 }
